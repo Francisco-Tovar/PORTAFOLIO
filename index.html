@@ -28,29 +28,30 @@
   <body>
     <!-- Header (reference-style) -->
     <header class="site-header">
-      <div
-        class="container py-3 d-flex align-items-center justify-content-between gap-3"
-      >
+      <div class="container header-inner">
         <div class="brand">
-          <img class="logo_image" alt="Thovarisk" />
-          <h1 class="brand-title mb-0">FRANCISCO TOVAR</h1>
-        </div>
+          <img  style="margin-left: 10px;" class="logo_image" alt="Thovarisk" />
+          
 
-        <ul class="nav nav-pills gap-2 align-items-center">
+          <ul class="nav nav-pills gap-2 align-items-center desktop-nav" style="margin-left: 10px;">
           <li class="nav-item">
-            <a class="nav-link active" href="#projects" data-nav="projects"
-              >Projects</a
-            >
+            <a class="nav-link active en" href="#projects" data-nav="projects">Projects</a>
+            <a class="nav-link active es hidden" href="#projects" data-nav="projects">Proyectos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about" data-nav="about">About</a>
+            <a class="nav-link en" href="#about" data-nav="about">About</a>
+            <a class="nav-link es hidden" href="#about" data-nav="about">Sobre mi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact" data-nav="contact">Contact</a>
+            <a class="nav-link en" href="#contact" data-nav="contact">Contact</a>
+            <a class="nav-link es hidden" href="#contact" data-nav="contact">Contacto</a>
           </li>
         </ul>
+        
+      </div>        
 
-        <div class="d-flex align-items-center gap-2">
+        <div class="header-actions" style="margin-right: 5px;">
+          
           <a
             class="icon-btn"
             href="https://github.com/Francisco-Tovar"
@@ -97,8 +98,31 @@
           >
             EN
           </button>
+          <button
+            class="icon-btn burger-btn"
+            type="button"
+            id="menuToggle"
+            aria-label="Open menu"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
         </div>
       </div>
+      <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu__inner">
+    <a class="mobile-link en" href="#projects" data-nav="projects">Projects</a>
+    <a class="mobile-link es hidden" href="#projects" data-nav="projects">Proyectos</a>
+
+    <a class="mobile-link en" href="#about" data-nav="about">About</a>
+    <a class="mobile-link es hidden" href="#about" data-nav="about">Sobre mi</a>
+
+    <a class="mobile-link en" href="#contact" data-nav="contact">Contact</a>
+    <a class="mobile-link es hidden" href="#contact" data-nav="contact">Contacto</a>
+  </div>
+</nav>
+
     </header>
 
     <!-- Hero -->
@@ -106,16 +130,24 @@
       <div class="container">
         <div class="hero-card">
           <div class="row g-0 align-items-center">
+            <div class="col-lg-5 text-center py-4">
+              <div class="pill mb-3">
+                <span class="dot"></span
+                ><span class="en" style="font-size: 24px"
+                  >_Hi there! I'm Francisco</span
+                ><span class="es hidden" style="font-size: 24px"
+                  >_Hola! Soy Francisco</span
+                >
+              </div>
+            </br>
+              <img
+                class="avatar"
+                src="IMAGENES/perfilAnimado.gif"
+                alt="Avatar"
+              />
+            </div>
             <div class="col-lg-7">
               <div class="hero-card-inner">
-                <div class="pill mb-3">
-                  <span class="dot"></span
-                  ><span class="en" style="font-size: 24px"
-                    >_Hi there! I'm Francisco</span
-                  ><span class="es hidden" style="font-size: 24px"
-                    >_Hola! Soy Francisco</span
-                  >
-                </div>
                 <h1 class="en">I build web apps, desktop tools, and games.</h1>
                 <h1 class="es hidden">
                   Creo apps web, herramientas de escritorio y juegos.
@@ -148,13 +180,6 @@
                   >
                 </div>
               </div>
-            </div>
-            <div class="col-lg-5 text-center py-4">
-              <img
-                class="avatar"
-                src="IMAGENES/perfilAnimado.gif"
-                alt="Avatar"
-              />
             </div>
           </div>
         </div>
@@ -201,6 +226,7 @@
             data-title="Thovarisk Web Games"
             data-featured="1"
             data-date="2025-01-01"
+            data-thumb="IMAGENES/thovagames.png"
           >
             <div class="project-thumb">
               <img src="IMAGENES/thovagames.png" alt="thovagames" />
@@ -224,7 +250,7 @@
                   rel="noreferrer"
                   >Play</a
                 >
-                <a class="link-quiet" type="button" data-details> Details </a>
+                <a class="link-quiet" type="button" data-details> Info </a>                
               </div>
             </div>
           </article>
@@ -235,6 +261,7 @@
             data-title="Reinos Cenfotecos"
             data-featured="1"
             data-date="2025-01-15"
+            data-thumb="IMAGENES/cenfomundos.png"
           >
             <div class="project-thumb">
               <img src="IMAGENES/cenfomundos.png" alt="Reinos Cenfotecos" />
@@ -261,7 +288,7 @@
                   rel="noreferrer"
                   >YouTube</a
                 >
-                <a class="link-quiet" type="button" data-details> Details </a>
+                <a class="link-quiet" type="button" data-details> Info </a>
               </div>
             </div>
           </article>
@@ -272,6 +299,7 @@
             data-title="Word Rush"
             data-featured="1"
             data-date="2024-10-01"
+            data-thumb="IMAGENES/wordrush.png"
           >
             <div class="project-thumb">
               <img src="IMAGENES/wordrush.png" alt="Word Rush" />
@@ -300,7 +328,7 @@
                   rel="noreferrer"
                   >YouTube</a
                 >
-                <a class="link-quiet" type="button" data-details> Details </a>
+                <a class="link-quiet" type="button" data-details> Info </a>
               </div>
             </div>
           </article>
@@ -311,6 +339,7 @@
             data-title="Bus Watcher"
             data-featured="0"
             data-date="2023-08-01"
+            data-thumb="IMAGENES/buswatchmock.png"
           >
             <div class="project-thumb">
               <img src="IMAGENES/buswatchmock.png" alt="Bus Watcher" />
@@ -330,7 +359,7 @@
                   rel="noreferrer"
                   >GitHub</a
                 >
-                <a class="link-quiet" type="button" data-details> Details </a>
+                <a class="link-quiet" type="button" data-details> Info </a>
               </div>
             </div>
           </article>
@@ -341,6 +370,7 @@
             data-title="Mishka"
             data-featured="0"
             data-date="2023-06-01"
+            data-thumb="IMAGENES/mishkamock.png"
           >
             <div class="project-thumb">
               <img src="IMAGENES/mishkamock.png" alt="Mishka" />
@@ -358,7 +388,7 @@
                   rel="noreferrer"
                   >GitHub</a
                 >
-                <a class="link-quiet" type="button" data-details> Details </a>
+                <a class="link-quiet" type="button" data-details> Info </a>
               </div>
             </div>
           </article>
@@ -603,7 +633,7 @@
 
     <!-- Details modal -->
     <div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-hero-dialog">
         <div
           class="modal-content"
           style="border-radius: 18px; overflow: hidden"
@@ -625,6 +655,12 @@
               "
             >
               <p id="modalBody" style="margin: 0"></p>
+            </div>
+
+            <div style="padding: 14px 18px 25px 18px">
+              <div class="modal-hero">
+                <img id="modalImage" src="" alt="" />
+              </div>
             </div>
           </div>
         </div>

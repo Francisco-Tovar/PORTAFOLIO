@@ -191,6 +191,7 @@ const modalEl = document.getElementById("detailsModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalMeta = document.getElementById("modalMeta");
 const modalBody = document.getElementById("modalBody");
+const modalImage = document.getElementById("modalImage");
 
 function getDetailsText(title) {
   const lang = getStored(STORAGE.lang, "en");
@@ -244,6 +245,12 @@ function openDetails(projectEl) {
       ?.textContent?.trim() || "";
   const body = getDetailsText(title);
 
+  // NEW: get thumbnail src (fallback to data-thumb if you add it later)
+  const thumb =
+    projectEl.getAttribute("data-thumb") ||
+    projectEl.querySelector(".project-thumb img")?.getAttribute("src") ||
+    "";
+
   if (modalTitle) {
     modalTitle.textContent = title;
   }
@@ -254,9 +261,28 @@ function openDetails(projectEl) {
     modalBody.textContent = body;
   }
 
+  // NEW: set image src + show/hide
+  if (modalImage) {
+    if (thumb) {
+      modalImage.src = thumb;
+      modalImage.alt = title;
+      modalImage.style.display = "block";
+    } else {
+      modalImage.removeAttribute("src");
+      modalImage.alt = "";
+      modalImage.style.display = "none";
+    }
+  }
+
   if (modalEl && window.bootstrap) {
     const modal = window.bootstrap.Modal.getOrCreateInstance(modalEl);
     modal.show();
+  }
+  if (modalImage && thumb) {
+    modalImage.style.opacity = "0";
+    modalImage.onload = () => {
+      modalImage.style.opacity = "1";
+    };
   }
 }
 
@@ -285,3 +311,53 @@ if (yearEl) {
 setLanguage(getStored(STORAGE.lang, "en"));
 setTheme(getStored(STORAGE.theme, "light"));
 applyFilterAndSort();
+(function initMobileMenu() {
+  const toggleBtn = document.getElementById("menuToggle");
+  const menu = document.getElementById("mobileMenu");
+
+  if (!toggleBtn || !menu) {
+    return;
+  }
+
+  function setOpen(isOpen) {
+    menu.classList.toggle("is-open", isOpen);
+    toggleBtn.setAttribute("aria-expanded", String(isOpen));
+    menu.setAttribute("aria-hidden", String(!isOpen));
+    toggleBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = menu.classList.contains("is-open");
+    setOpen(!isOpen);
+  });
+
+  // Close menu when a mobile link is clicked
+  menu.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+    if (target.matches("a[href^='#']")) {
+      setOpen(false);
+    }
+  });
+
+  // Close menu on resize up to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      setOpen(false);
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+    if (target.closest("#mobileMenu") || target.closest("#menuToggle")) {
+      return;
+    }
+    setOpen(false);
+  });
+})();
