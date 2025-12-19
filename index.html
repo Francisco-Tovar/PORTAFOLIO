@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Francisco Tovar • Portfolio</title>
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- Bootstrap (layout helpers) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <!-- Fonts: game-forward but still clean -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600;700&family=Rubik:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- Header (reference-style) -->
+    <header class="site-header">
+      <div
+        class="container py-3 d-flex align-items-center justify-content-between gap-3"
+      >
+        <div class="brand">
+          <img class="logo_image" alt="Thovarisk" />
+          <h1 class="brand-title mb-0">FRANCISCO TOVAR</h1>
+        </div>
+
+        <ul class="nav nav-pills gap-2 align-items-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="#projects" data-nav="projects"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" data-nav="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" data-nav="contact">Contact</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <a
+            class="icon-btn"
+            href="https://github.com/Francisco-Tovar"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
+            <img
+              src="ILUSTRACIONES/github.svg"
+              alt=""
+              style="height: 22px; width: 22px"
+            />
+          </a>
+          <a
+            class="icon-btn"
+            href="https://www.linkedin.com/in/francisco-tovar-araya/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <img
+              src="ILUSTRACIONES/linkedin.svg"
+              alt=""
+              style="height: 22px; width: 22px"
+            />
+          </a>
+
+          <button
+            class="icon-btn"
+            type="button"
+            id="themeToggle"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            ◐
+          </button>
+
+          <button
+            class="icon-btn"
+            type="button"
+            id="langToggle"
+            aria-label="Toggle language"
+            title="ES / EN"
+          >
+            EN
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="row g-0 align-items-center">
+            <div class="col-lg-7">
+              <div class="hero-card-inner">
+                <div class="pill mb-3">
+                  <span class="dot"></span
+                  ><span class="en" style="font-size: 24px"
+                    >_Hi there! I'm Francisco</span
+                  ><span class="es hidden" style="font-size: 24px"
+                    >_Hola! Soy Francisco</span
+                  >
+                </div>
+                <h1 class="en">I build web apps, desktop tools, and games.</h1>
+                <h1 class="es hidden">
+                  Creo apps web, herramientas de escritorio y juegos.
+                </h1>
+                <p class="subtitle en">
+                  Software Engineer • Full‑stack • Game dev enthusiast
+                </p>
+                <p class="subtitle es hidden">
+                  Ingeniero de Software • Full‑stack • Entusiasta de videojuegos
+                </p>
+
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                  <a class="btn btn-primary px-4 en" href="#projects"
+                    >View Projects</a
+                  >
+                  <a class="btn btn-primary px-4 es hidden" href="#projects"
+                    >Ver Proyectos</a
+                  >
+                  <a
+                    class="btn btn-outline px-4 en"
+                    href="./PDF/Fran_Tovar_CV_Eng.pdf"
+                    download
+                    >Download CV</a
+                  >
+                  <a
+                    class="btn btn-outline px-4 es hidden"
+                    href="./PDF/Fran_Tovar_CV_Eng.pdf"
+                    download
+                    >Descargar CV</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 text-center py-4">
+              <img
+                class="avatar"
+                src="IMAGENES/perfilAnimado.gif"
+                alt="Avatar"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects (reference-style catalog) -->
+    <section class="section" id="projects">
+      <div class="container text-center">
+        <h2 class="section-title en">Projects</h2>
+        <h2 class="section-title es hidden">Proyectos</h2>
+        <p class="section-subtitle en">
+          A curated collection of some of my previous projects.
+        </p>
+        <p class="section-subtitle es hidden">
+          Algunos de mis proyectos previos.
+        </p>
+        <div class="divider"></div>
+
+        <div class="controls mt-4">
+          <div
+            class="control d-flex align-items-center gap-2"
+            style="min-width: 280px"
+          >
+            <span style="font-weight: 800; color: rgba(17, 24, 39, 0.55)"
+              >⌕</span
+            >
+            <input id="search" type="text" placeholder="Search..." />
+          </div>
+
+          <div class="control">
+            <select id="sort">
+              <option class="control-text" value="newest">Newest</option>
+              <option class="control-text" value="az">A → Z</option>
+              <option class="control-text" value="featured">Featured</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid mt-4" id="projectGrid">
+          <!-- Card 1 -->
+          <article
+            class="project"
+            data-title="Thovarisk Web Games"
+            data-featured="1"
+            data-date="2025-01-01"
+          >
+            <div class="project-thumb">
+              <img src="IMAGENES/thovagames.png" alt="thovagames" />
+              <span class="badge-free">HTML, CSS, JS</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Thovarisk Web Games</h3>
+              <div class="project-meta en">Web Page</div>
+              <div class="project-meta es hidden">Web Page</div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-primary btn-sm px-4"
+                  href="https://github.com/Francisco-Tovar/ThovariskWebGames"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                ><a
+                  class="btn btn-warning btn-sm px-4"
+                  href="https://francisco-tovar.github.io/ThovariskWebGames/#/games"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Play</a
+                >
+                <a class="link-quiet" type="button" data-details> Details </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="project"
+            data-title="Reinos Cenfotecos"
+            data-featured="1"
+            data-date="2025-01-15"
+          >
+            <div class="project-thumb">
+              <img src="IMAGENES/cenfomundos.png" alt="Reinos Cenfotecos" />
+              <span class="badge-free">JS, Java</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Reinos Cenfotecos</h3>
+              <div class="project-meta en">Browser • Programming Patterns</div>
+              <div class="project-meta es hidden">
+                Navegador • Programación con patrones
+              </div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-primary btn-sm px-4"
+                  href="https://github.com/Francisco-Tovar/ReinosCenfotecos"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+                <a
+                  class="btn btn-danger btn-sm px-4"
+                  href="https://www.youtube.com/watch?v=i5-PCZqMmZg"
+                  target="_blank"
+                  rel="noreferrer"
+                  >YouTube</a
+                >
+                <a class="link-quiet" type="button" data-details> Details </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="project"
+            data-title="Word Rush"
+            data-featured="1"
+            data-date="2024-10-01"
+          >
+            <div class="project-thumb">
+              <img src="IMAGENES/wordrush.png" alt="Word Rush" />
+              <span class="badge-free">React Native, Ollama3</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Word Rush</h3>
+              <div class="project-meta en">
+                AI • Browser & Mobile • Word game
+              </div>
+              <div class="project-meta es hidden">
+                IA • Navegador y móvil • Juego de palabras
+              </div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-primary btn-sm px-4"
+                  href="https://github.com/Francisco-Tovar/WordRushRepo"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+                <a
+                  class="btn btn-danger btn-sm px-4"
+                  href="https://youtu.be/PfI_nY_FNdw"
+                  target="_blank"
+                  rel="noreferrer"
+                  >YouTube</a
+                >
+                <a class="link-quiet" type="button" data-details> Details </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article
+            class="project"
+            data-title="Bus Watcher"
+            data-featured="0"
+            data-date="2023-08-01"
+          >
+            <div class="project-thumb">
+              <img src="IMAGENES/buswatchmock.png" alt="Bus Watcher" />
+              <span class="badge-free">C#, JS, HTML</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Bus Watcher</h3>
+              <div class="project-meta en">C# .NET • Real-time monitoring</div>
+              <div class="project-meta es hidden">
+                C# .NET • Monitoreo en tiempo real
+              </div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-primary btn-sm px-4"
+                  href="https://github.com/Francisco-Tovar/BusWatcher-Project"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+                <a class="link-quiet" type="button" data-details> Details </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article
+            class="project"
+            data-title="Mishka"
+            data-featured="0"
+            data-date="2023-06-01"
+          >
+            <div class="project-thumb">
+              <img src="IMAGENES/mishkamock.png" alt="Mishka" />
+              <span class="badge-free">MERN</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Mishka</h3>
+              <div class="project-meta en">Booking & web‑commerce</div>
+              <div class="project-meta es hidden">Reservas y web‑commerce</div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-primary btn-sm px-4"
+                  href="https://github.com/PapayaSolutions/Papaya-Solutions-Front"
+                  target="_blank"
+                  rel="noreferrer"
+                  >GitHub</a
+                >
+                <a class="link-quiet" type="button" data-details> Details </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container text-center">
+        <h2 class="section-title en">About</h2>
+        <h2 class="section-title es hidden">Sobre mí</h2>
+        <p class="section-subtitle en">
+          A quick snapshot of what I do and what I enjoy building.
+        </p>
+        <p class="section-subtitle es hidden">
+          Un resumen de lo que hago y lo que me gusta construir.
+        </p>
+        <div class="divider"></div>
+
+        <div class="row g-4 mt-4 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="contact-card h-100 text-start">
+              <h3 class="mb-2" style="font-weight: 900">Francisco Tovar</h3>
+              <p class="text-muted en">
+                Software Engineer focused on building reliable apps, playful
+                game experiences, and clean UI.
+              </p>
+              <p class="text-muted es hidden">
+                Ingeniero de Software enfocado en apps confiables, experiencias
+                de juego y UI limpia.
+              </p>
+              <div class="chips mt-3">
+                <span class="chip">C# / .NET</span>
+                <span class="chip">Java</span>
+                <span class="chip">SQL / PLSQL</span>
+                <span class="chip">MERN</span>
+                <span class="chip">HTML, CSS, JavaScript</span>
+                <span class="chip">Git / GitHub</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-card h-100 text-start">
+              <h3 class="mb-2 en" style="font-weight: 900">What I value</h3>
+              <h3 class="mb-2 es hidden" style="font-weight: 900">
+                Lo que valoro
+              </h3>
+              <ul
+                class="mb-0"
+                style="font-family: Poppins, system-ui; color: var(--muted)"
+              >
+                <li class="en">Clear communication and teamwork.</li>
+                <li class="es hidden">
+                  Comunicación clara y trabajo en equipo.
+                </li>
+                <li class="en">Practical, shippable solutions.</li>
+                <li class="es hidden">Soluciones prácticas y entregables.</li>
+                <li class="en">Learning fast and iterating.</li>
+                <li class="es hidden">Aprender rápido e iterar.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container text-center">
+        <h2 class="section-title en">Contact</h2>
+        <h2 class="section-title es hidden">Contacto</h2>
+        <p class="section-subtitle en">
+          Got an idea? Let’s build something cool together.
+        </p>
+        <p class="section-subtitle es hidden">
+          ¿Tenés una idea? Construyamos algo genial juntos.
+        </p>
+        <div class="divider"></div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 col-md-10 col-lg-7">
+            <div class="contact-card text-start">
+              <form
+                class="en"
+                action="https://formsubmit.co/fran.tovardev@gmail.com"
+                method="POST"
+              >
+                <input type="text" name="_honey" style="display: none" />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Portfolio contact"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://francisco-tovar.github.io/PORTAFOLIO/gracias.html"
+                />
+                <input
+                  type="hidden"
+                  name="_autoresponse"
+                  value="Hi! I'm Francisco and I got your message, we'll be in contact soon!"
+                />
+
+                <div class="mb-3">
+                  <label class="form-label" style="font-weight: 800"
+                    >Email</label
+                  >
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    placeholder="you@email.com"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" style="font-weight: 800"
+                    >Name</label
+                  >
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="nombre"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" style="font-weight: 800"
+                    >Message</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="Mensaje"
+                    rows="4"
+                    placeholder="Tell me what you want to build"
+                    required
+                  ></textarea>
+                </div>
+                <button class="btn btn-primary px-4" type="submit">Send</button>
+              </form>
+
+              <form
+                class="es hidden"
+                action="https://formsubmit.co/fran.tovardev@gmail.com"
+                method="POST"
+              >
+                <input type="text" name="_honey" style="display: none" />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Nuevo contacto del portafolio"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://francisco-tovar.github.io/PORTAFOLIO/gracias.html"
+                />
+                <input
+                  type="hidden"
+                  name="_autoresponse"
+                  value="Hola! soy Francisco y recibí tu mensaje, pronto estaremos en contacto!"
+                />
+
+                <div class="mb-3">
+                  <label class="form-label" style="font-weight: 800"
+                    >Correo</label
+                  >
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    placeholder="tu@correo.com"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" style="font-weight: 800"
+                    >Nombre</label
+                  >
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" style="font-weight: 800"
+                    >Mensaje</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="Mensaje"
+                    rows="4"
+                    placeholder="Contame qué querés construir"
+                    required
+                  ></textarea>
+                </div>
+                <button class="btn btn-primary px-4" type="submit">
+                  Enviar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to top -->
+    <button
+      type="button"
+      id="btn-back-to-top"
+      class="btn"
+      aria-label="Back to top"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 3.293 3.354 7.939a.5.5 0 1 1-.708-.708l5-5a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1-.708.708L8 3.293z"
+        />
+        <path d="M7.5 2.5h1v11h-1z" />
+      </svg>
+    </button>
+
+    <footer>
+      <div class="container text-center">
+        <div>
+          © <span id="year"></span> Francisco Tovar — All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Details modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div
+          class="modal-content"
+          style="border-radius: 18px; overflow: hidden"
+        >
+          <div class="modal-body p-0">
+            <div style="padding: 18px 18px 0 18px">
+              <h3 id="modalTitle" style="font-weight: 900; margin: 0"></h3>
+              <p
+                id="modalMeta"
+                class="text-muted"
+                style="margin: 6px 0 0 0"
+              ></p>
+            </div>
+            <div
+              style="
+                padding: 16px 18px 18px 18px;
+                font-family: Rubik, system-ui;
+                color: var(--muted);
+              "
+            >
+              <p id="modalBody" style="margin: 0"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./JS/app.js"></script>
+  </body>
+</html>
